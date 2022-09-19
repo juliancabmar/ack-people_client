@@ -19,7 +19,7 @@ function PostCard({
         <Image
           floated="right"
           size="mini"
-          src={`../../public/assets/${username}.jpg`}
+          src={`../../public/assets/${username.replace(" ", "-")}.jpg`}
         />
         <Card.Header>{username}</Card.Header>
         <Card.Meta as={Link} to={`/posts/${id}`}>
