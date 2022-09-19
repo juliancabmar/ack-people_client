@@ -18,8 +18,8 @@ function PostCard({
       <Card.Content>
         <Image
           floated="right"
-          size="mini"
-          src={`../../public/assets/${username.replace(" ", "-")}.jpg`}
+          size="small"
+          src={`https://react.semantic-ui.com/images/avatar/large/${username}.jpg`}
         />
         <Card.Header>{username}</Card.Header>
         <Card.Meta as={Link} to={`/posts/${id}`}>
