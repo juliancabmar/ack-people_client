@@ -14,7 +14,8 @@ function Register(props) {
     username: '',
     email: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    avatar: ''
   });
 
   const [addUser, { loading }] = useMutation(REGISTER_USER, {
@@ -49,6 +50,7 @@ function Register(props) {
           value={values.username}
           error={errors.username ? true : false}
           onChange={onChange}
+          required
         />
         <Form.Input
           label="Email"
@@ -58,6 +60,7 @@ function Register(props) {
           value={values.email}
           error={errors.email ? true : false}
           onChange={onChange}
+          required
         />
         <Form.Input
           label="Password"
@@ -67,6 +70,7 @@ function Register(props) {
           value={values.password}
           error={errors.password ? true : false}
           onChange={onChange}
+          required
         />
         <Form.Input
           label="Confirm Password"
@@ -76,6 +80,17 @@ function Register(props) {
           value={values.confirmPassword}
           error={errors.confirmPassword ? true : false}
           onChange={onChange}
+          required
+        />
+        <Form.Input
+          label="Avatar Image"
+          placeholder="http://online-images.com/some-pic.jpg"
+          name="avatar"
+          type="url"
+          value={values.avatar}
+          error={errors.avatar ? true : false}
+          onChange={onChange}
+          required
         />
         <Button type="submit" primary>
           Register
@@ -100,6 +115,7 @@ const REGISTER_USER = gql`
     $email: String!
     $password: String!
     $confirmPassword: String!
+    $avatar: String!
   ) {
     register(
       registerInput: {
@@ -107,6 +123,7 @@ const REGISTER_USER = gql`
         email: $email
         password: $password
         confirmPassword: $confirmPassword
+        avatar: $avatar
       }
     ) {
       id
