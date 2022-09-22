@@ -21,7 +21,7 @@ function App() {
     <AuthProvider>
       <Router>
         <Container>
-          <Image src={logo} style={{paddingTop: 15}} />
+          <Image src={logo} size="medium" style={{paddingTop: 15}} />
           <MenuBar />
           <Route exact path="/" component={Home} />
           <AuthRoute exact path="/login" component={Login} />
