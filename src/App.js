@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Container } from 'semantic-ui-react';
+import { Container, Image } from 'semantic-ui-react';
+
+import logo from "./assets/logo.png";
 
 import 'semantic-ui-css/semantic.min.css';
 import './App.css';
@@ -19,6 +21,7 @@ function App() {
     <AuthProvider>
       <Router>
         <Container>
+          <Image src={logo} size="medium" style={{paddingTop: 15}} />
           <MenuBar />
           <Route exact path="/" component={Home} />
           <AuthRoute exact path="/login" component={Login} />
