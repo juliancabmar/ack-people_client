@@ -1,4 +1,5 @@
 # Ack-People (social network MERNG app)
+## Overview:
 
 This project is the client side of a posting based social network what allow us register, create posts, like and comment posts from other user as well. 
 
